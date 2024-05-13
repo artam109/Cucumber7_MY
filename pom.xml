@@ -103,13 +103,6 @@
                 <version>3.0.0-M1</version>
                 <configuration>
 
-                    <!--  XML çalıştırmak için  -->
-                    <!--                    <suiteXmlFiles>-->
-                    <!--                        <suiteXmlFile>testng.xml</suiteXmlFile>-->
-                    <!--                    </suiteXmlFiles>-->
-
-                    <!--  CLASS çalıştırmak için  -->
-
                     <includes>
                         <include>**/_04_TestRunnerSmoke</include>  <!-- **/ projenin neresinde ise bul  -->
                     </includes>
@@ -119,5 +112,48 @@
         </plugins>
     </build>
 
+    <profiles>
+        <profile>
+            <id>Smoke</id>
+            <build>
+                <plugins>
+                    <plugin>
+                        <groupId>org.apache.maven.plugins</groupId>
+                        <artifactId>maven-surefire-plugin</artifactId>
+                        <version>3.0.0-M1</version>
+                        <configuration>
+
+                            <includes>
+                                <include>**/_04_TestRunnerSmoke</include>  <!-- **/ projenin neresinde ise bul  -->
+                            </includes>
+
+                        </configuration>
+                    </plugin>
+                </plugins>
+            </build>
+        </profile>
+
+        <profile>
+            <id>Regression</id>
+            <build>
+                <plugins>
+                    <plugin>
+                        <groupId>org.apache.maven.plugins</groupId>
+                        <artifactId>maven-surefire-plugin</artifactId>
+                        <version>3.0.0-M1</version>
+                        <configuration>
+
+                            <includes>
+                                <include>**/_05_TestRunnerRegression</include>  <!-- **/ projenin neresinde ise bul  -->
+                            </includes>
+
+                        </configuration>
+                    </plugin>
+                </plugins>
+            </build>
+        </profile>
+
+
+    </profiles>
 
 </project>

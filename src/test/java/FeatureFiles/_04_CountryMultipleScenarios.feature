@@ -11,7 +11,6 @@ Feature: Country Multi Scenario
     When Create a country
     Then Success message should be displayed
 
-  @Regression
   Scenario: Create a Country 2
     When Create a country name as "runtime" code as "Lvl9"
     Then Success message should be displayed

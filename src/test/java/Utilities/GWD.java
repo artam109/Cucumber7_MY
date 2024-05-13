@@ -37,10 +37,9 @@ public class GWD {
                     if (isRunningOnJenkins()) {
                         ChromeOptions options = new ChromeOptions();
                         options.addArguments("--headless", "--no-sandbox", "--disable-dev-shm-usage", "--disable-gpu", "--window-size=1400,2400");
-
                         threadDriver.set(new ChromeDriver(options));
-                    }
-                    else {
+
+                    } else {
                         threadDriver.set(new ChromeDriver());
                     }
 
