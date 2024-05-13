@@ -40,6 +40,9 @@ public class GWD {
 
                         threadDriver.set(new ChromeDriver(options));
                     }
+                    else {
+                        threadDriver.set(new ChromeDriver());
+                    }
 
             }
 
