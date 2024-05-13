@@ -3,6 +3,7 @@ package Utilities;
 import org.openqa.selenium.Point;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
+import org.openqa.selenium.chrome.ChromeOptions;
 import org.openqa.selenium.edge.EdgeDriver;
 import org.openqa.selenium.firefox.FirefoxDriver;
 
@@ -33,7 +34,11 @@ public class GWD {
                     threadDriver.set(new EdgeDriver());
                     break;
                 default:
-                    threadDriver.set(new ChromeDriver());
+
+                    ChromeOptions options = new ChromeOptions();
+                    options.addArguments("--headless", "--no-sandbox", "--disable-dev-shm-usage", "--disable-gpu", "--window-size=1400,2400");
+
+                    threadDriver.set(new ChromeDriver(options));
             }
 
 
